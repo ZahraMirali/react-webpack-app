@@ -1,0 +1,13 @@
+{
+  "name": "react-webpack-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+    "react",
+    "webpack",
+    "typescript"
+  ],
+  "author": "Zahra Mirali <z.mirali1997@gmail.com>",
+  "license": "MIT"
+}
