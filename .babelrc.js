@@ -19,5 +19,21 @@ module.exports = (api) => {
       ],
       "@babel/preset-react",
     ],
+    plugins: [
+      '@babel/plugin-syntax-dynamic-import',
+      '@babel/plugin-proposal-class-properties',
+      '@babel/plugin-proposal-export-namespace-from',
+      '@babel/plugin-proposal-throw-expressions',
+      '@babel/proposal-object-rest-spread',
+      mode !== 'production' && 'react-refresh/babel',
+      [
+        'formatjs',
+        {
+          ast: true,
+          idInterpolationPattern: '[sha512:contenthash:base64:6]',
+        },
+      ],
+
+    ].filter(Boolean),
   };
 };
