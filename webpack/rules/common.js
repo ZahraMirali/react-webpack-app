@@ -31,3 +31,8 @@ export const htmlRule = {
     loader: 'html-loader',
   },
 };
+
+export const imagesRule = {
+  test: /\.(?:ico|gif|png|jpg|jpeg|tif|tiff)$/i,
+  type: 'asset/resource',
+};
