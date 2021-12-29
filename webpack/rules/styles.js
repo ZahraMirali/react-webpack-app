@@ -1,5 +1,9 @@
+import { arrayFilterEmpty } from '../utils/helpers';
 import {
     cssLoader,
+    cssLoaderItems,
+    cssModulesSupportLoaderItems,
+    lessLoader,
     miniCssExtractLoader,
     postCssLoader,
     resolveUrlLoader,
@@ -10,3 +14,16 @@ export const cssRule = {
     test: /\.css$/,
     use: [miniCssExtractLoader, postCssLoader, resolveUrlLoader, cssLoader],
 };
+
+/** less **/
+export const lessModulesRule = {
+    test: /\.module.less$/,
+    use: arrayFilterEmpty([...cssModulesSupportLoaderItems, postCssLoader, resolveUrlLoader, lessLoader]),
+};
+export const lessRule = {
+    test: /\.less$/,
+    exclude: /\.module.less$/,
+    use: arrayFilterEmpty([...cssLoaderItems, postCssLoader, resolveUrlLoader, lessLoader]),
+};
+
+export const lessRules = [lessModulesRule, lessRule];
