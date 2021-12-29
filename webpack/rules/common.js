@@ -24,3 +24,10 @@ export const javascriptRule = {
   use: [babelLoader],
   exclude: /node_modules/,
 };
+
+export const htmlRule = {
+  test: /\.(html)$/,
+  use: {
+    loader: 'html-loader',
+  },
+};
