@@ -1,6 +1,7 @@
 import { join } from 'path';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
+import { sassResourceItems } from '../config';
 import { isProd, rootDir, webpackDir } from '../utils/env';
 
 export const cssLoader = {
@@ -79,3 +80,21 @@ export const cssModulesSupportLoaderItems = [
 ];
 
 export const cssLoaderItems = [miniCssExtractLoader, cssLoader];
+
+export const sassLoaderItems = [
+  {
+    loader: 'sass-loader',
+    options: {
+      sourceMap: true,
+      implementation: require('sass'),
+    },
+  },
+  sassResourceItems.length
+    ? {
+        loader: 'sass-resources-loader',
+        options: {
+          resources: sassResourceItems,
+        },
+      }
+    : null,
+];

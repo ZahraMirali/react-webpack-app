@@ -58,6 +58,8 @@
     "style-loader": "~2.0.0",
     "resolve-url-loader": "~3.1.2",
     "@teamsupercell/typings-for-css-modules-loader": "~2.4.0",
-    "less-loader": "~7.0.2"
+    "less-loader": "~7.0.2",
+    "sass-loader": "~10.0.4",
+    "sass-resources-loader": "~2.1.1"
   }
 }
