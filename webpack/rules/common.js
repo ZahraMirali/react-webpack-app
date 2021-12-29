@@ -1,3 +1,4 @@
+import { babelLoader } from './useLoaderRuleItems';
 import { transform } from '@formatjs/ts-transformer';
 
 export const typescriptRule = {
@@ -15,5 +16,11 @@ export const typescriptRule = {
       };
     },
   },
+  exclude: /node_modules/,
+};
+
+export const javascriptRule = {
+  test: /\.(js|jsx)$/,
+  use: [babelLoader],
   exclude: /node_modules/,
 };
