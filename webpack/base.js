@@ -2,6 +2,7 @@ import path from 'path';
 
 import { aliasItems } from './config';
 import entry from './entry';
+import optimization from './optimization';
 import * as plugins from './plugins';
 import * as rules from './rules';
 import { isDevServer, isProd } from './utils/env';
@@ -42,4 +43,5 @@ export default {
     alias: aliasItems,
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
+  optimization,
 };
