@@ -1,6 +1,6 @@
 import path from 'path';
 
-import { aliasItems } from './config';
+import { aliasItems, externalItems } from './config';
 import entry from './entry';
 import optimization from './optimization';
 import * as plugins from './plugins';
@@ -44,4 +44,5 @@ export default {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   optimization,
+  externals: externalItems,
 };
