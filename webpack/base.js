@@ -1,5 +1,6 @@
 import path from 'path';
 
+import { aliasItems } from './config';
 import entry from './entry';
 import * as plugins from './plugins';
 import * as rules from './rules';
@@ -37,4 +38,8 @@ export default {
     plugins.esLintPlugin,
     plugins.copyPlugin,
   ]),
+  resolve: {
+    alias: aliasItems,
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
+  },
 };
