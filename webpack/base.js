@@ -1,5 +1,6 @@
 import path from 'path';
 
+import entry from './entry';
 import * as plugins from './plugins';
 import * as rules from './rules';
 import { isDevServer, isProd } from './utils/env';
@@ -9,6 +10,7 @@ export default {
   context: __dirname,
   target: isDevServer ? 'web' : ['web', 'es5'],
   mode: isProd ? 'production' : 'development',
+  entry,
   output: {
     publicPath: './',
     path: path.join(__dirname, '../dist'),
